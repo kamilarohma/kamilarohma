@@ -4,7 +4,7 @@ import numpy as np
 import plotly.express as px
 
 
-def mulai() :
+def mulai_1() :
 	# Grafik 1
 	plh = st.selectbox("Pilih negara",u_negara)
 	
@@ -63,8 +63,10 @@ def mulai() :
 	mm = dn[(dn['produksi'] == dn['produksi'].max()) | (dn['produksi'] == dn['produksi'].min())]
 	st.write("Produksi Maksimum dan Minimum pada Tahun " + str(thn),mm)
 	st.write("Tidak Produksi",zv)
+
 def info_data() :
-	pass
+	st.write ("Web App ini dibuat oleh Kamila Rohmah Lusiana")
+	
 
 
 data_mentah = pd.read_csv('produksi_minyak_mentah.csv')
@@ -103,9 +105,10 @@ kumulatif = [data_mentah.loc[i]['produksi'].sum() for i in u_negara]
 kml = pd.DataFrame (kumulatif, columns=['kumulatif']).set_index(u_negara)
 kml.index.names = ['negara']
 
+
 st.write("### Selamat Datang di Laman Data Produksi Minyak Mentah Dunia")
 st.write("oleh Kamila_ 12220032")
-x = st.button("start")
+cek = st.selectbox("Mode", ['Menu', 'Tentang'])
 
-if x : mulai()
-else : EOFError()
+if cek == "Menu" : mulai_1()
+else : info_data
