@@ -65,8 +65,7 @@ def mulai_1() :
 	st.write("Tidak Produksi",zv)
 
 def info_data() :
-	st.write ("Web App ini dibuat oleh Kamila Rohmah Lusiana")
-	
+	pass
 
 
 data_mentah = pd.read_csv('produksi_minyak_mentah.csv')
@@ -111,4 +110,4 @@ st.write("oleh Kamila_ 12220032")
 cek = st.selectbox("Mode", ['Menu', 'Tentang'])
 
 if cek == "Menu" : mulai_1()
-else : info_data
+else :  st.write ("Web App ini dibuat oleh Kamila Rohmah Lusiana")
